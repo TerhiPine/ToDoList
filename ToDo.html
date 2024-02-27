@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="sheet.css" />
+    <script src="ToDo.js"></script>
   </head>
-  <body></body>
+  <body>
+    <h1 class="title">ToDo</h1>
+    <div class="all-tasks">
+      <h2 class="taskTitle">Task lists</h2>
+      <ul class="taskList"></ul>
+      <form action="" data-new-list-form="">
+        <input
+          type="text"
+          class="new list"
+          data-new-list-input
+          placeholder="New list"
+          aria-label="listName"
+        />
+        <button class="btn list" aria-label="Create a new list">+</button>
+      </form>
+    </div>
+    <div class="todoList"></div>
+  </body>
 </html>
