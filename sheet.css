@@ -1,0 +1,54 @@
+:root {
+    --gradient: linear-gradient(
+    180deg, 
+    rgba(250, 235, 215, 0.73) 0%,
+    #ADFF2F 100%
+    );
+}
+
+body {
+    background: var(--gradient);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.1rem;
+    background-color:gray;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+h1, 
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    padding: 2rem;
+    height: 40%;
+    width: 35%;
+    box-shadow: 0 1rem 3rem 1rem rgba(90, 89, 85, 0.73);
+    max-width: 35rem;
+}
+
+h2 {
+    height: 3rem;
+    color: olive;
+    text-align: center;
+}
