@@ -59,6 +59,7 @@ h2 {
     display: flex;
 }
 
+/* videossa .input-field*/
 .inputField {
     width: 95%;
     border: 0.05rem solid #d2d2d2bf;
@@ -93,6 +94,7 @@ li {
     color: olive;
 }
 
+/* ei vielä toteutettu videossa, tulee ilmeisesti js osiossa*/
 .disabled {
     display: flex;
     text-decoration: line-through;
@@ -110,6 +112,7 @@ input[type="checkbox"]::before {
     color: transparent;
 }
 
+/* ei vielä toteutettu videossa, tulee ilmeisesti js osiossa*/
 input[type="checkbox"]::before::after {
     color: white;
     background-color: olivedrab;
@@ -147,6 +150,7 @@ input[type="checkbox"]::before::after {
     border-radius: 0.5rem;
 }
 
+/* videossa ".made-by" ja ".author"*/
 .madeBy,
 .authors {
     font-size: 0.8rem;
@@ -155,6 +159,7 @@ input[type="checkbox"]::before::after {
 .madeBy {
     color: darkslategrey;
 }
+
 
 .authors {
     color: darkolivegreen;
