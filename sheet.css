@@ -86,7 +86,7 @@ ul {
 li {
     display: flex;
     flex-direction: column;
-    gap: 1.1 rem;
+    gap: 1.1rem;
     padding: 1.2rem;
 }
 
@@ -101,7 +101,7 @@ li {
     color: olive;
 }
 
-/* ei vielä toteutettu videossa, tulee ilmeisesti js osiossa*/
+
 .disabled {
     display: flex;
     text-decoration: line-through;
