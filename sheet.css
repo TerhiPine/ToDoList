@@ -34,6 +34,8 @@ p {
     margin: 0;
 }
 
+
+/*container */
 .todo {
     display: flex;
     flex-direction: column;
@@ -127,7 +129,7 @@ input[type="checkbox"]::before {
 }
 
 /* ei vielä toteutettu videossa, tulee ilmeisesti js osiossa*/
-input[type="checkbox"]::checked::before {
+input[type="checkbox"]:checked::before {
     color: white;
     background-color: olivedrab;
     border: 0.05rem solid olivedrab;
