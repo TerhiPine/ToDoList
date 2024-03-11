@@ -74,11 +74,6 @@ input[type="text"]::placeholder {
     color:grey;
 }
 
-todoContainer {
-    display: flex;
-    gap: 0.5 rem;
-}
-
 ul {
     padding: 0;
     margin: 0;
@@ -94,6 +89,7 @@ li {
 
 #toDoList p {
     display: flex;
+    position: relative;
     gap: 1rem;
     color: olive;
     align-items: center;
@@ -103,6 +99,11 @@ li {
     color: olive;
 }
 
+.todo-container {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
 
 .disabled {
     display: flex;
@@ -128,12 +129,21 @@ input[type="checkbox"]::before {
     color: transparent;
 }
 
-/* ei vielä toteutettu videossa, tulee ilmeisesti js osiossa*/
 input[type="checkbox"]:checked::before {
     color: white;
     background-color: olivedrab;
     border: 0.05rem solid olivedrab;
     border-radius: 50%;
+}
+
+.delete-button {
+    border: none;
+    background-color: transparent;
+    color: darkolivegreen;
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .counter {
