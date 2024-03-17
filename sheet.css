@@ -56,6 +56,12 @@ h2 {
     text-align: center;
 }
 
+.errorMessage {
+    visibility: hidden;
+    color: red;
+    position: sticky;
+}
+
 .input {
     position: relative;
     display: flex;
