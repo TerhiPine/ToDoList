@@ -4,6 +4,7 @@ let todo = JSON.parse(localStorage.getItem("todo")) || [];
 const toDoInput = document.getElementById("toDoInput");
 const toDoList = document.getElementById("toDoList");
 const toDoCount = document.getElementById("toDoCount");
+const errorMsg = document.getElementById("errorMessage");
 const addButton = document.querySelector(".btn");
 const deleteButton = document.getElementById("deleteButton");
 
@@ -23,7 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function addTask() {
     const newTask = toDoInput.value.trim();
-    if (newTask !== "") {
+    const length = newTask.length;
+    if (newTask !== "" && length >= 3) {
+        toDoInput.style.borderColor = "#d2d2d2bf";
+        errorMsg.style.visibility = "hidden";
         todo.push({
             text: newTask,
             disabled: false,
@@ -31,6 +35,10 @@ function addTask() {
         saveToLocalStorage();
         toDoInput.value = "";
         displayTasks();
+    }
+    else { 
+        toDoInput.style.borderColor = "red";
+        errorMsg.style.visibility = "visible";
     }
 }
 
