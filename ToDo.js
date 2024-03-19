@@ -1,4 +1,4 @@
-// retrieve todo from local storage or initialize an empty array
+// retrieve todo from local storage, initialize an empty array
 
 let todo = JSON.parse(localStorage.getItem("todo")) || [];
 const toDoInput = document.getElementById("toDoInput");
@@ -8,7 +8,7 @@ const errorMsg = document.getElementById("errorMessage");
 const addButton = document.querySelector(".btn");
 const deleteButton = document.getElementById("deleteButton");
 
-// initialize
+// initialize, evenlistener, tldr the todo-thing
 
 document.addEventListener("DOMContentLoaded", function () {
     addButton.addEventListener("click", addTask);
@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
     deleteButton.addEventListener("click", deleteAllTasks);
     displayTasks();
 });
+
+// task functions, add, display, edit.. ALL task-related things
+//function for adding task. "trim" makes it cleaner, tidies if in input is uncalld spaces etc.
+//plus error-code if input is too short
 
 function addTask() {
     const newTask = toDoInput.value.trim();
@@ -41,7 +45,7 @@ function addTask() {
         errorMsg.style.visibility = "visible";
     }
 }
-
+//function for task display,
 function displayTasks() {
     toDoList.innerHTML = "";
     todo.forEach((item, index) => {
@@ -61,6 +65,8 @@ function displayTasks() {
     });
     toDoCount.textContent = todo.length;
 }
+
+//function for editing mistakes in already added task
 function editTask(index) {
     const todoItem = document.getElementById(`todo-${index}`);
     const existingText = todo[index].text;
@@ -69,6 +75,8 @@ function editTask(index) {
     inputElement.value = existingText;
     todoItem.replaceWith(inputElement);
     inputElement.focus();
+
+    //eventlistener; sharp when field active and blur when not
 
     inputElement.addEventListener("blur", function() {
         const updatedText = inputElement.value.trim();
@@ -80,21 +88,29 @@ function editTask(index) {
     });
 }
 
+//function for marking done
+
 function toggleTask(index) {
     todo[index].disabled = !todo[index].disabled; 
     saveToLocalStorage();
     displayTasks();
 }
+
+// delete task, only one 
 function deleteTask(index) {
     todo.splice(index, 1);
     saveToLocalStorage();
     displayTasks();
 }
+
+//delete ALL tasks
 function deleteAllTasks() {
     todo = [];
     saveToLocalStorage();
     displayTasks();
 }
+
+//function for every task-function, to save it to local storage
 
 function saveToLocalStorage(){
     localStorage.setItem("todo", JSON.stringify(todo));
